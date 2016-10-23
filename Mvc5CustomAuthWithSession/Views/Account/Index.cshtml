@@ -1,0 +1,35 @@
+﻿
+@{
+    Layout = null;
+}
+
+@model Mvc5CustomAuthWithSession.ViewModels.AccountViewModel
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    @using (Html.BeginForm("Login", "Account", FormMethod.Post))
+    {
+        @ViewBag.Error
+        <table cellpadding="2" cellspacing="2">
+            <tr>
+                <td>@Html.LabelFor(m => m.Account.Username)</td>
+                <td>@Html.TextBoxFor(m => m.Account.Username)</td>
+            </tr>
+            <tr>
+                <td>@Html.LabelFor(m => m.Account.Password)</td>
+                <td>@Html.TextBoxFor(m => m.Account.Password)</td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td><input type="submit" value="Login" /></td>
+            </tr>
+        </table>
+    }
+</body>
+</html>
